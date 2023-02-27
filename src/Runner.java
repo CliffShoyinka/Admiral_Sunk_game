@@ -11,18 +11,23 @@ public class Runner {
         System.out.println("==================== ADMIRAL SUNK ======================");
         System.out.println();
 
-        boolean playAgain = true;
 
-        while (playAgain) {
-            game.play();
 
-            System.out.println("Do you want to play again? (y/n)");
-            String idx = input.next();
+        int select;
 
-            if (!idx.equalsIgnoreCase("y")) {
-                playAgain = false;
+        do {
+            System.out.println("0-Exit" +
+                    "\n1-start");
+            select=input.nextInt();
+            switch (select) {
+                case 1:
+                    game.play();
+                    break;
+                case 0:
+                    System.out.println("Good bye... <3");
             }
-        }
+
+        }while (select!=0);
 
     }
 }
